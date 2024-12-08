@@ -1,7 +1,9 @@
 const { Schema, model } = require("mongoose");
 const docSchema = new Schema(
   {
-    _id: String,
+    _id: {
+      type: String,
+    },
     data: Object,
   },
   {

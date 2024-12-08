@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import "../css/style.css";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 export const Landing = () => {
   const [docid, setDocid] = useState("");
@@ -10,11 +11,12 @@ export const Landing = () => {
     if (docid.trim() !== "") {
       navigate(`/doc/${docid}`);
     } else {
-      alert("Please enter a valid document ID");
+      toast.error("Please enter a valid Document ID");
     }
   };
   return (
     <div className="w-full h-screen flex justify-center items-center imgbg">
+      <Toaster />
       <div className="w-96 h-auto bg-white shadow-xl rounded-lg flex flex-col p-6 gap-5">
         <Link
           className="bg-blue-600 gfont hover:bg-blue-700 text-white text-center font-semibold py-3 px-4 rounded-md transition-all duration-300 transform hover:scale-105 shadow-md"

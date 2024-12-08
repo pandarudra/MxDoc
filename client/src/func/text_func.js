@@ -13,6 +13,7 @@ export const Toolbar_options = [
   ["blockquote", "code-block"],
   [{ header: "1" }, { header: "2" }],
   [{ table: [] }],
+
   ["clean"],
 ];
 export const url = import.meta.env.VITE_BASE_URL;
