@@ -4,6 +4,7 @@ const Doc = require("./model/doc.model");
 const app = express();
 const server = require("http").createServer(app);
 const { Server } = require("socket.io");
+require("dotenv").config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -39,7 +40,7 @@ io.on("connection", (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 connectDB().then(() => {
   server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
