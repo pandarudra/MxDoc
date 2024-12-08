@@ -15,3 +15,4 @@ export const Toolbar_options = [
   [{ table: [] }],
   ["clean"],
 ];
+export const url = import.meta.env.VITE_BASE_URL;

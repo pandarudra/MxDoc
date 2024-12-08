@@ -5,7 +5,7 @@ import "quill/dist/quill.snow.css";
 import "../css/style.css";
 import { io } from "socket.io-client";
 import { useParams } from "react-router-dom";
-import { Toolbar_options } from "../func/text_func";
+import { Toolbar_options, url } from "../func/text_func";
 
 export const TextEditor = () => {
   const wrapperRef = useRef(null);
@@ -14,7 +14,7 @@ export const TextEditor = () => {
   const params = useParams();
   //socket connection
   useEffect(() => {
-    const s = io("http://localhost:3000");
+    const s = io(url);
     setSocket(s);
 
     return () => {
